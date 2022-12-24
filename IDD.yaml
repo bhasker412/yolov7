@@ -1,6 +1,6 @@
 # Please insure that your custom_dataset are put in same parent dir with YOLOv6_DIR
-train: '/content/bdd100k/images/100k/train' # train images
-val: '/content/bdd100k/images/100k/val' # val images
+train: '/content/IDD_Yolo/images/train' # train images
+val: '/content/IDD_Yolo/images/val' # val images
 
 # Classes
 nc: 11  # number of classes
