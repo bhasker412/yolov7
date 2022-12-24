@@ -3,16 +3,16 @@ train: '/content/bdd100k/images/100k/train' # train images
 val: '/content/bdd100k/images/100k/val' # val images
 
 # Classes
-nc: 10  # number of classes
-names: [
-  'pedestrian',
-  'rider',
-  'car',
-  'truck',
-  'bus',
-  'train',
-  'motorcycle',
-  'bicycle',
-  'traffic light',
-  'traffic sign'
+nc: 11  # number of classes
+names: ["animal",
+"autorickshaw",
+"bicycle",
+"bus",
+"car",
+"motorcycle",
+"person",
+"rider",
+"traffic light",
+"traffic sign",
+"truck"
 ]
