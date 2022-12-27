@@ -519,6 +519,19 @@ def train(hyp, opt, device, tb_writer=None):
             wandb_logger.wandb.log_artifact(str(final), type='model',
                                             name='run_' + wandb_logger.wandb_run.id + '_model',
                                             aliases=['last', 'best', 'stripped'])
+            wandb_logger.wandb.log_artifact(str(last), type='model',
+                                            name='run_' + wandb_logger.wandb_run.id + '_model',
+                                            aliases=['last', 'best', 'stripped'])
+            #save_dir / 'opt.yaml'
+            #save_dir / 'hyp.yaml'
+            wandb_logger.wandb.log_artifact(str(save_dir/'opt.yaml'), type='yamls',
+                                            name='run_' + wandb_logger.wandb_run.id + '_yamls',
+                                            aliases=['last', 'best', 'stripped'])
+            
+            wandb_logger.wandb.log_artifact(str(save_dir/'hyp.yaml'), type='yamls',
+                                            name='run_' + wandb_logger.wandb_run.id + '_yamls',
+                                            aliases=['last', 'best', 'stripped'])
+            
         wandb_logger.finish_run()
     else:
         dist.destroy_process_group()
