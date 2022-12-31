@@ -518,7 +518,10 @@ def train(hyp, opt, device, tb_writer=None):
         if wandb_logger.wandb and not opt.evolve:  # Log the stripped model
             wandb_logger.wandb.log_artifact(str(final), type='model',
                                             name='run_' + wandb_logger.wandb_run.id + '_model',
-                                            aliases=['last', 'best', 'stripped'])
+                                            aliases=['best', 'stripped'])
+            wandb_logger.wandb.log_artifact(str(last), type='model',
+                                            name='run_' + wandb_logger.wandb_run.id + '_model',
+                                            aliases=['last', 'stripped'])
         wandb_logger.finish_run()
     else:
         dist.destroy_process_group()
